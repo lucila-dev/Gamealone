@@ -1,49 +1,33 @@
 # Gamealone
 
-University C++ project: an offline desktop game hub built with **SDL2**.
+A desktop app where you play classic games against the computer. Everything runs offline — no accounts, no network.
 
-Play classic games against a simple computer opponent.
+## Tech stack
 
-## Games
+- **C++17**
+- **SDL2** + **SDL2_ttf** for graphics and text
+- **CMake** for building
 
-1. Tic-Tac-Toe  
-2. Battleship  
-3. Connect Four  
-4. Checkers  
-5. Hangman  
-6. Memory Match  
-7. Rock Paper Scissors  
-8. Reversi  
+## What it does
 
-Each game has Easy / Medium / Hard and a Rules panel.
+Opens with a home screen, then a library of eight games:
 
-## Requirements (macOS)
+- Tic-Tac-Toe  
+- Battleship  
+- Connect Four  
+- Checkers  
+- Hangman  
+- Memory Match  
+- Rock Paper Scissors  
+- Reversi  
+
+Each game has Easy / Medium / Hard difficulty, a Rules panel, and dark/light theme.
+
+## Build & run (macOS)
 
 ```bash
 brew install cmake sdl2 sdl2_ttf
-```
-
-## Build & run
-
-```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="/opt/homebrew"
 cmake --build build
 ./build/gamealone
 ```
-
-## Project layout
-
-```
-src/
-  main.cpp          entry point
-  app.cpp / .hpp    screens (home, library, game UI)
-  render.cpp        simple drawing helpers
-  theme.cpp         dark / light colours
-  games/            one file per game
-```
-
-## Controls
-
-- **Play** → choose a game  
-- **Rules** → how to play  
-- **Esc** back · **R** reset · **1/2/3** difficulty · **T** theme  

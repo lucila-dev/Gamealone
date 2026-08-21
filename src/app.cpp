@@ -422,7 +422,7 @@ void App::drawLanding() {
   ui::fillRoundRect(renderer_, ui::SR(120, 120, 760, 480), ui::S(28), p.surface);
   ui::drawRoundRect(renderer_, ui::SR(120, 120, 760, 480), ui::S(28), p.primary, std::max(2, ui::S(2)));
 
-  ui::drawText(renderer_, font_, "OFFLINE GAME CLUB", ui::S(kWidth / 2), ui::S(170), p.muted, true);
+  ui::drawText(renderer_, font_, "VS COMPUTER", ui::S(kWidth / 2), ui::S(170), p.muted, true);
   ui::drawText(renderer_, fontHero_, "Gamealone", ui::S(kWidth / 2), ui::S(250), p.text, true);
   ui::drawText(renderer_, fontLarge_, "Eight classic games. You versus the computer.",
                ui::S(kWidth / 2), ui::S(320), p.muted, true);
