@@ -81,7 +81,7 @@ class TicTacToe final : public Game {
   }
 
  private:
-  static SDL_Rect boardRect() { return ui::SR(280, 150, 400, 400); }
+  static SDL_Rect boardRect() { return ui::SR(350, 160, 400, 400); }
 
   int cellAt(int x, int y) const {
     const SDL_Rect board = boardRect();

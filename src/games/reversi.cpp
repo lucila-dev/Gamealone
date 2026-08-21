@@ -154,13 +154,13 @@ class Reversi final : public Game {
     ui::drawText(renderer, font,
                  "You " + std::to_string(countPieces(board_, 1)) + "  ·  CPU " +
                      std::to_string(countPieces(board_, 2)),
-                 ui::S(480), ui::S(640), colors().muted, true);
+                 ui::S(480), ui::S(660), colors().muted, true);
   }
 
   std::string status() const override { return message_; }
 
  private:
-  static SDL_Rect boardRect() { return ui::SR(230, 140, 500, 500); }
+  static SDL_Rect boardRect() { return ui::SR(300, 160, 500, 500); }
 
   bool cellAt(int x, int y, int& r, int& c) const {
     const SDL_Rect frame = boardRect();

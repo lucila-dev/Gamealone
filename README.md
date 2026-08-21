@@ -10,7 +10,7 @@ A desktop app where you play classic games against the computer. Everything runs
 
 ## What it does
 
-Opens with a home screen, then a library of eight games:
+Opens with a home screen, then a library of eight games. Selecting a game shows the full rules first, then you start playing.
 
 - Tic-Tac-Toe  
 - Battleship  
@@ -21,6 +21,4 @@ Opens with a home screen, then a library of eight games:
 - Rock Paper Scissors  
 - Reversi  
 
-Each game has Easy / Medium / Hard difficulty, a Rules panel, and dark/light theme.
-
-
+Each game has Easy / Medium / Hard difficulty and dark/light theme.

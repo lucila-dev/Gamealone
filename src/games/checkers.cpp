@@ -252,7 +252,7 @@ class Checkers final : public Game {
   }
 
  private:
-  static SDL_Rect boardRect() { return ui::SR(240, 130, 480, 480); }
+  static SDL_Rect boardRect() { return ui::SR(310, 160, 480, 480); }
 
   bool posAt(int x, int y, Pos& out) const {
     const SDL_Rect frame = boardRect();

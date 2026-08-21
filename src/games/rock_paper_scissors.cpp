@@ -103,25 +103,24 @@ class RockPaperScissors final : public Game {
     ui::drawText(renderer, fontLarge,
                  "First to " + std::to_string(roundsToWin_) + "  ·  You " +
                      std::to_string(playerScore_) + " — CPU " + std::to_string(cpuScore_),
-                 ui::S(480), ui::S(150), colors().text, true);
+                 ui::S(550), ui::S(160), colors().text, true);
 
     if (hasLast_) {
-      ui::fillRoundRect(renderer, ui::SR(180, 190, 220, 140), ui::S(18), colors().surface);
-      ui::fillRoundRect(renderer, ui::SR(560, 190, 220, 140), ui::S(18), colors().surface);
-      ui::drawText(renderer, font, "You", ui::S(290), ui::S(210), colors().muted, true);
-      ui::drawText(renderer, font, "CPU", ui::S(670), ui::S(210), colors().muted, true);
-      ui::drawText(renderer, fontLarge, handGlyph(lastPlayer_), ui::S(290), ui::S(270),
+      ui::fillRoundRect(renderer, ui::SR(220, 210, 240, 150), ui::S(18), colors().surface);
+      ui::fillRoundRect(renderer, ui::SR(640, 210, 240, 150), ui::S(18), colors().surface);
+      ui::drawText(renderer, font, "You", ui::S(340), ui::S(235), colors().muted, true);
+      ui::drawText(renderer, font, "CPU", ui::S(760), ui::S(235), colors().muted, true);
+      ui::drawText(renderer, fontLarge, handGlyph(lastPlayer_), ui::S(340), ui::S(295),
                    colors().rps, true);
-      ui::drawText(renderer, fontLarge, handGlyph(lastCpu_), ui::S(670), ui::S(270),
+      ui::drawText(renderer, fontLarge, handGlyph(lastCpu_), ui::S(760), ui::S(295),
                    colors().primary, true);
-      ui::drawText(renderer, font, handName(lastPlayer_), ui::S(290), ui::S(310), colors().text, true);
-      ui::drawText(renderer, font, handName(lastCpu_), ui::S(670), ui::S(310), colors().text, true);
+      ui::drawText(renderer, font, handName(lastPlayer_), ui::S(340), ui::S(340), colors().text, true);
+      ui::drawText(renderer, font, handName(lastCpu_), ui::S(760), ui::S(340), colors().text, true);
     }
 
     for (int i = 0; i < 3; ++i) {
       const SDL_Rect rect = handRect(i);
-      const bool hover = false;
-      ui::button(renderer, fontLarge, rect, handName(static_cast<Hand>(i)), colors().rps, hover,
+      ui::button(renderer, fontLarge, rect, handName(static_cast<Hand>(i)), colors().rps, false,
                  false);
     }
   }
@@ -129,7 +128,7 @@ class RockPaperScissors final : public Game {
   std::string status() const override { return message_; }
 
  private:
-  static SDL_Rect handRect(int index) { return ui::SR(150 + index * 230, 420, 200, 70); }
+  static SDL_Rect handRect(int index) { return ui::SR(200 + index * 250, 520, 220, 72); }
 
   Hand pickCpu() {
     std::uniform_int_distribution<int> dist(0, 2);

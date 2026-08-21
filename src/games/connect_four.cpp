@@ -87,7 +87,7 @@ class ConnectFour final : public Game {
  private:
   using Board = std::array<std::array<int, kCols>, kRows>;
 
-  static SDL_Rect boardRect() { return ui::SR(180, 140, 600, 480); }
+  static SDL_Rect boardRect() { return ui::SR(250, 160, 600, 460); }
 
   int colAt(int x, int y) const {
     const SDL_Rect frame = boardRect();

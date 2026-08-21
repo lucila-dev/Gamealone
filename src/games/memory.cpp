@@ -164,7 +164,7 @@ class Memory final : public Game {
  private:
   enum class Phase { Idle, PlayerResolve, CpuFirst, CpuSecond, CpuResolve };
 
-  static SDL_Rect boardRect() { return ui::SR(220, 140, 520, 520); }
+  static SDL_Rect boardRect() { return ui::SR(290, 160, 520, 520); }
 
   int cardAt(int x, int y) const {
     const SDL_Rect frame = boardRect();

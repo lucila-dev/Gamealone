@@ -66,7 +66,7 @@ class Hangman final : public Game {
       masked.push_back(guessed_.count(c) ? c : '_');
       masked.push_back(' ');
     }
-    ui::drawText(renderer, fontLarge, masked, ui::S(480), ui::S(360), colors().text, true);
+    ui::drawText(renderer, fontLarge, masked, ui::S(550), ui::S(280), colors().text, true);
 
     for (int i = 0; i < 26; ++i) {
       const char letter = static_cast<char>('A' + i);
@@ -97,7 +97,7 @@ class Hangman final : public Game {
     const int cols = 13;
     const int row = index / cols;
     const int col = index % cols;
-    return ui::SR(80 + col * 58, 430 + row * 54, 50, 44);
+    return ui::SR(120 + col * 64, 520 + row * 58, 54, 46);
   }
 
   char keyAt(int x, int y) const {
@@ -108,17 +108,17 @@ class Hangman final : public Game {
 
   void drawGallows(SDL_Renderer* renderer, int misses) {
     SDL_SetRenderDrawColor(renderer, colors().muted.r, colors().muted.g, colors().muted.b, 255);
-    SDL_RenderDrawLine(renderer, ui::S(120), ui::S(320), ui::S(320), ui::S(320));
-    SDL_RenderDrawLine(renderer, ui::S(160), ui::S(320), ui::S(160), ui::S(140));
-    SDL_RenderDrawLine(renderer, ui::S(160), ui::S(140), ui::S(250), ui::S(140));
-    SDL_RenderDrawLine(renderer, ui::S(250), ui::S(140), ui::S(250), ui::S(165));
+    SDL_RenderDrawLine(renderer, ui::S(140), ui::S(450), ui::S(360), ui::S(450));
+    SDL_RenderDrawLine(renderer, ui::S(180), ui::S(450), ui::S(180), ui::S(170));
+    SDL_RenderDrawLine(renderer, ui::S(180), ui::S(170), ui::S(290), ui::S(170));
+    SDL_RenderDrawLine(renderer, ui::S(290), ui::S(170), ui::S(290), ui::S(205));
     SDL_SetRenderDrawColor(renderer, colors().hangman.r, colors().hangman.g, colors().hangman.b, 255);
-    if (misses >= 1) ui::fillCircle(renderer, ui::S(250), ui::S(185), ui::S(18), colors().hangman);
-    if (misses >= 2) SDL_RenderDrawLine(renderer, ui::S(250), ui::S(203), ui::S(250), ui::S(260));
-    if (misses >= 3) SDL_RenderDrawLine(renderer, ui::S(250), ui::S(220), ui::S(225), ui::S(245));
-    if (misses >= 4) SDL_RenderDrawLine(renderer, ui::S(250), ui::S(220), ui::S(275), ui::S(245));
-    if (misses >= 5) SDL_RenderDrawLine(renderer, ui::S(250), ui::S(260), ui::S(228), ui::S(300));
-    if (misses >= 6) SDL_RenderDrawLine(renderer, ui::S(250), ui::S(260), ui::S(272), ui::S(300));
+    if (misses >= 1) ui::fillCircle(renderer, ui::S(290), ui::S(230), ui::S(22), colors().hangman);
+    if (misses >= 2) SDL_RenderDrawLine(renderer, ui::S(290), ui::S(252), ui::S(290), ui::S(330));
+    if (misses >= 3) SDL_RenderDrawLine(renderer, ui::S(290), ui::S(275), ui::S(255), ui::S(310));
+    if (misses >= 4) SDL_RenderDrawLine(renderer, ui::S(290), ui::S(275), ui::S(325), ui::S(310));
+    if (misses >= 5) SDL_RenderDrawLine(renderer, ui::S(290), ui::S(330), ui::S(260), ui::S(390));
+    if (misses >= 6) SDL_RenderDrawLine(renderer, ui::S(290), ui::S(330), ui::S(320), ui::S(390));
   }
 
   Difficulty difficulty_ = Difficulty::Medium;
