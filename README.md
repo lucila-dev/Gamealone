@@ -22,3 +22,4 @@ Opens with a home screen, then a library of eight games. Selecting a game shows 
 - Reversi  
 
 Each game has Easy / Medium / Hard difficulty and dark/light theme.
+
