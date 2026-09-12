@@ -759,3 +759,4 @@ void App::drawGameChrome() {
                  ui::S(kHeight - 53), accent, true);
   }
 }
+
